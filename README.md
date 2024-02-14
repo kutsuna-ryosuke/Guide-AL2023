@@ -1,3 +1,4 @@
 # Guide-AL2023
 
-kutsuna-ryosuke.github.io/Guilde-AL2023のテスト
+Amazon Linux 2023 構築ガイド
+URL: https://github.com/kutsuna-ryosuke/Guide-AL2023
