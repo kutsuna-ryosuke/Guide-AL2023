@@ -27,6 +27,7 @@ jobs:
     - name: Build
       run: |
         make html
+        touch build/docs/.nojekyll
     - name: Deploy Configuration
       run: |
           mkdir ~/.ssh
