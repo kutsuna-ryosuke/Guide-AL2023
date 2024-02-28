@@ -15,6 +15,9 @@ jobs:
       contents: read
       pages: write
       id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -34,4 +37,4 @@ jobs:
         make html
         touch docs/.nojekyll
     - name: Deploy
-      uses: actions/deploy-pages@v3
+      uses: actions/deploy-pages@v4
