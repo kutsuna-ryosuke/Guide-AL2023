@@ -37,5 +37,7 @@ jobs:
         touch docs/.nojekyll
     - name: Prepare to deploy
       uses: actions/upload-pages-artifact@v1
+      with:
+        path: docs
     - name: Deploy
       uses: actions/deploy-pages@v2
