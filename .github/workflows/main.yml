@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v1
+      uses: actions/checkout@v4
       with:
         ref: "main"
 
     - name: Set up Python
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v5
       with:
         python-version: 3.10.13
 
@@ -34,7 +34,7 @@ jobs:
           echo "${{ secrets.MY_ACTIONS_DEPLOY_KEY }}" > ~/.ssh/id_rsa
           chmod 400 ~/.ssh/id_rsa
     - name: Deploy
-      uses: Guide-Al2023/main
+      uses: action/deploy-pages@v1
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs
