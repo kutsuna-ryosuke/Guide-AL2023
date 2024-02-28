@@ -27,3 +27,4 @@ help:
 
 html: Makefile
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "docs" $(SPHINXOPTS) $(O)
+	find docs/
