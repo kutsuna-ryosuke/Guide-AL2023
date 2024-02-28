@@ -9,8 +9,8 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write 
+#    permissions:
+#      id-token: write 
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -29,12 +29,12 @@ jobs:
       run: |
         make html
         touch docs/.nojekyll
-    - name: Deploy Configuration
-      run: |
-          mkdir ~/.ssh
-          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-          echo "${{ secrets.MY_ACTIONS_DEPLOY_KEY }}" > ~/.ssh/id_rsa
-          chmod 400 ~/.ssh/id_rsa
+#    - name: Deploy Configuration
+#      run: |
+#          mkdir ~/.ssh
+#          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+#          echo "${{ secrets.MY_ACTIONS_DEPLOY_KEY }}" > ~/.ssh/id_rsa
+#          chmod 400 ~/.ssh/id_rsa
     - name: Deploy
       uses: actions/deploy-pages@v4
 #      with:
