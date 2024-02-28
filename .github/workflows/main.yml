@@ -35,9 +35,9 @@ jobs:
           chmod 400 ~/.ssh/id_rsa
     - name: Deploy
       uses: actions/deploy-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs
+#      with:
+#        github_token: ${{ secrets.GITHUB_TOKEN }}
+#        publish_dir: ./docs
 #    - name: Push
 #      env:
 #        GITHUB_USER: "builduser"
