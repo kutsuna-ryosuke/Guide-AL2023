@@ -33,14 +33,19 @@ jobs:
           ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
           echo "${{ secrets.MY_ACTIONS_DEPLOY_KEY }}" > ~/.ssh/id_rsa
           chmod 400 ~/.ssh/id_rsa
-    - name: Push
-      env:
-        GITHUB_USER: "builduser"
-        GITHUB_EMAIL: "kutsuna@serverworks.co.jp"
-      run: |
-          git config --local user.name "${GITHUB_USER}"
-          git config --local user.email "${GITHUB_EMAIL}"
-          git remote set-url origin git@github.com:${GITHUB_REPOSITORY}.git
-          git add docs
-          git commit -m "auto rebuilding site"
-          git push origin main
+    - name: Deploy
+      uses: uses: builduser/main@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
+#    - name: Push
+#      env:
+#        GITHUB_USER: "builduser"
+#        GITHUB_EMAIL: "kutsuna@serverworks.co.jp"
+#      run: |
+#          git config --local user.name "${GITHUB_USER}"
+#          git config --local user.email "${GITHUB_EMAIL}"
+#          git remote set-url origin git@github.com:${GITHUB_REPOSITORY}.git
+#          git add docs
+#          git commit -m "auto rebuilding site"
+#          git push origin main
