@@ -22,7 +22,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        apt install python3-sphinx python3-sphinx-rtd-theme
+        sudo apt-get install python3-sphinx python3-sphinx-rtd-theme
     - name: Build pages
       run: |
         make html
