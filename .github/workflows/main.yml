@@ -35,5 +35,7 @@ jobs:
       run: |
         make html
         touch docs/.nojekyll
+    - name: Prepare to deploy
+      uses: actions/upload-pages-artifact@v1
     - name: Deploy
       uses: actions/deploy-pages@v2
