@@ -35,6 +35,9 @@ jobs:
           chmod 400 ~/.ssh/id_rsa
     - name: Deploy
       uses: actions/deploy-pages@v4
+      permissions:
+          pages: write
+          id-token: write 
 #      with:
 #        github_token: ${{ secrets.GITHUB_TOKEN }}
 #        publish_dir: ./docs
