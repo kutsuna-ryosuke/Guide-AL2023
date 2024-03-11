@@ -15,6 +15,7 @@ https://github.com/kutsuna-ryosuke/Guide-AL2023 にてコメント、Pull-Reques
 6. ログ管理
 7. ストレージ管理
 8. SMTPサーバ設定
+9. DNSサーバ設定
 9. メール受信サーバ設定
 10. HTTPサーバ設定
 11. プロキシサーバ設定
